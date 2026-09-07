@@ -16,3 +16,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Aquí meteremos más adelante el código del carrusel de categorías
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // Menú desplegable para móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('activo');
+            
+            // Cambia el icono entre ☰ y ✕ al hacer clic
+            if (navMenu.classList.contains('activo')) {
+                menuToggle.textContent = '✕';
+            } else {
+                menuToggle.textContent = '☰';
+            }
+        });
+    }
+});

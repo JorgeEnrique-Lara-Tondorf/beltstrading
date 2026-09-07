@@ -463,3 +463,184 @@ nav a.activo {
     line-height: 1.6;
     opacity: 0.9;
 }   
+/* ==============================
+   PÁGINA DE CATÁLOGO COMPLETO
+   ============================== */
+.contenedor-catalogo {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 50px;
+}
+
+.seccion-categoria {
+    margin-bottom: 60px;
+}
+
+.cabecera-categoria {
+    text-align: left;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--naranja);
+    padding-left: 20px;
+}
+
+.cabecera-categoria h2 {
+    color: var(--azul-oscuro);
+    font-size: 32px;
+    margin: 0 0 10px 0;
+}
+
+.cabecera-categoria h2 span {
+    color: var(--naranja);
+}
+
+.cabecera-categoria p {
+    color: #555;
+    font-size: 16px;
+    margin: 0;
+    max-width: 800px;
+}
+
+.separador-catalogo {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 60px 0;
+}
+/* ==============================================
+   ADAPTACIÓN PARA MÓVILES Y TABLETAS (Responsive)
+   ============================================== */
+
+/* Estilos por defecto del botón menú (oculto en ordenador) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--azul-oscuro);
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+@media (max-width: 768px) {
+    /* 1. CABECERA Y MENÚ MÓVIL */
+    header {
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón ☰ en móviles */
+    }
+
+    nav {
+        display: none; /* Oculta el menú por defecto */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--blanco);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        padding: 20px 0;
+    }
+
+    /* Clase que activa JavaScript para mostrar el menú */
+    nav.activo {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    nav a {
+        font-size: 16px;
+        display: block;
+        padding: 8px 0;
+    }
+
+    .btn-header {
+        margin-top: 10px;
+    }
+
+    /* 2. HERO / BANNER PRINCIPAL */
+    .hero {
+        padding: 60px 20px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .botones-hero {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-principal, .btn-secundario {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* 3. CARACTERÍSTICAS (3 Columnas a 1 Columna) */
+    .caracteristicas {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    /* 4. PÁGINA DE CONTACTO */
+    .contenedor-contacto {
+        flex-direction: column;
+        padding: 0 20px;
+        margin: 30px auto;
+        gap: 30px;
+    }
+
+    .formulario-contacto {
+        padding: 25px 20px;
+    }
+
+    /* 5. PÁGINA ¿QUIÉNES SOMOS? */
+    .contenedor-nosotros {
+        flex-direction: column-reverse; /* Pone el texto arriba y la foto abajo */
+        padding: 0 20px;
+        margin: 30px auto;
+        gap: 30px;
+    }
+
+    .imagen-nosotros img {
+        height: 250px;
+    }
+
+    .valores-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .seccion-valores {
+        padding: 40px 20px;
+    }
+
+    /* 6. PÁGINA DE PRODUCTO Y CATÁLOGO */
+    .producto-contenedor {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .contenedor-catalogo {
+        padding: 0 20px;
+        margin: 30px auto;
+    }
+
+    .catalogo-destacado {
+        padding: 50px 20px;
+    }
+}
