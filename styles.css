@@ -1,51 +1,74 @@
-/* ==============================
-   VARIABLES DE COLORES
-   ============================== */
+/* ==============================================
+   BELTS TRADING - ESTILOS CORPORATIVOS B2B (2026)
+   ============================================== */
+
+/* 1. VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL */
 :root {
-    --azul-oscuro: #0a192f;
+    --azul-primario: #0a192f;
+    --azul-secundario: #1e293b;
     --naranja: #ff6600;
     --naranja-hover: #e65c00;
-    --gris-claro: #f4f6f9;
-    --blanco: #ffffff;
+    --verde-wa: #25D366;
+    --verde-wa-hover: #128C7E;
+    --gris-fondo: #f8fafc;
+    --gris-card: #ffffff;
+    --gris-borde: #e2e8f0;
+    --texto-oscuro: #0f172a;
+    --texto-mutado: #64748b;
+    --sombra-suave: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    --sombra-tarjeta: 0 15px 30px -10px rgba(10, 25, 47, 0.08);
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
     box-sizing: border-box;
 }
 
-/* ==============================
-   NAVEGACIÓN (HEADER)
-   ============================== */
-header {
-    background-color: var(--blanco);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* ==============================================
+   2. CABECERA Y NAVEGACIÓN (HEADER)
+   ============================================== */
+header, #cabecera {
+    background-color: #ffffff;
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--gris-borde);
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--azul-oscuro);
-    text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 10px;
+    text-decoration: none;
 }
-.logo span { color: var(--naranja); }
+
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
     margin: 0;
     padding: 0;
     align-items: center;
@@ -53,646 +76,584 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--azul-oscuro);
+    color: var(--azul-primario);
     font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--naranja);
+    background-color: rgba(255, 102, 0, 0.06);
 }
 
 nav a.activo {
-    border-bottom: 3px solid var(--naranja);
-    padding-bottom: 5px;
+    color: var(--naranja);
+    font-weight: 700;
+    background-color: rgba(255, 102, 0, 0.08);
 }
 
 .btn-header {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
+    background-color: var(--azul-primario) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
 }
-.btn-header:hover { background-color: #172a48; color: var(--blanco); }
 
-/* ==============================
-   BANNER PRINCIPAL (HERO)
-   ============================== */
+.btn-header:hover {
+    background-color: var(--azul-secundario) !important;
+    transform: translateY(-1px);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--azul-primario);
+    cursor: pointer;
+}
+
+/* ==============================================
+   3. BANNER INTERNO
+   ============================================== */
+.banner-interno {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 20px;
+    border-bottom: 4px solid var(--naranja);
+}
+
+.banner-interno h1 {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.banner-interno h1 span {
+    color: var(--naranja);
+}
+
+.banner-interno p {
+    font-size: 17px;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ==============================================
+   4. PÁGINA DE CONTACTO (CONTENEDOR)
+   ============================================== */
+.contenedor-contacto {
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Columna Izquierda: Información */
+.info-contacto {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.info-contacto h2 {
+    color: var(--azul-primario);
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.info-contacto p {
+    color: var(--texto-mutado);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.lista-contacto li {
+    font-size: 15px;
+    color: var(--texto-oscuro);
+    padding: 12px 16px;
+    background-color: var(--gris-fondo);
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+    line-height: 1.5;
+}
+
+.lista-contacto li strong {
+    color: var(--azul-primario);
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--verde-wa);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+    transition: all 0.25s ease;
+    text-align: center;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--verde-wa-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* Columna Derecha: Formulario */
+.formulario-contacto {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--gris-borde);
+    border-top: 5px solid var(--naranja);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.formulario-contacto h2 {
+    color: var(--azul-primario);
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.grupo-input label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--azul-primario);
+    margin-bottom: 8px;
+}
+
+/* Estilo pulido de las cajas de texto */
+.grupo-input input,
+.grupo-input textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--gris-borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--texto-oscuro);
+    background-color: #fdfdfd;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+    border-color: var(--naranja);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.12);
+}
+
+.boton-enviar, .btn-principal {
+    width: 100%;
+    background-color: var(--naranja);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.25);
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.boton-enviar:hover, .btn-principal:hover {
+    background-color: var(--naranja-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.35);
+}
+
+/* ==============================================
+   5. SECCIÓN INICIO (HERO & CARACTERÍSTICAS)
+   ============================================== */
 .hero {
-    background-color: var(--azul-oscuro); 
-    /* AQUÍ ESTÁ EL CAMBIO: Añadimos images/ antes de home.png */
-    background-image: linear-gradient(to right, rgba(10, 25, 47, 0.9) 40%, rgba(10, 25, 47, 0.4)), url('images/home.png');
+    background-color: var(--azul-primario);
+    background-image: linear-gradient(to right, rgba(10, 25, 47, 0.92) 40%, rgba(10, 25, 47, 0.5)), url('images/ChatGPT Image 30 jul 2026, 13_36_17.png');
     background-size: cover;
     background-position: center;
-    color: var(--blanco);
-    padding: 100px 50px;
-    min-height: 500px; 
+    color: #ffffff;
+    padding: 100px 5%;
+    min-height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 46px;
+    font-weight: 800;
     max-width: 800px;
     margin: 0 0 20px 0;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
-.hero h1 span { color: var(--naranja); }
+.hero h1 span {
+    color: var(--naranja);
+}
 
 .hero p {
     font-size: 18px;
-    max-width: 600px;
-    margin-bottom: 40px;
-    line-height: 1.5;
+    max-width: 620px;
+    margin-bottom: 35px;
+    color: #cbd5e1;
 }
 
 .botones-hero {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
-
-.btn-principal, .btn-secundario {
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.btn-principal {
-    background-color: var(--naranja);
-    color: var(--blanco);
-}
-.btn-principal:hover { background-color: var(--naranja-hover); }
 
 .btn-secundario {
     background-color: transparent;
-    color: var(--blanco);
-    border: 2px solid var(--blanco);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 14px 28px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
-.btn-secundario:hover { background-color: rgba(255,255,255,0.1); }
-/* ==============================
-   CARACTERÍSTICAS (3 Columnas)
-   ============================== */
+
+.btn-secundario:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
 .caracteristicas {
-    display: flex;
-    background-color: var(--gris-claro);
-    padding: 40px 50px;
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 50px 5%;
+    background-color: var(--gris-fondo);
 }
 
 .feature-box {
-    flex: 1;
-    text-align: left;
+    background: #ffffff;
     padding: 30px;
-    background: var(--blanco);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
     border-top: 4px solid var(--naranja);
+    border-left: 1px solid var(--gris-borde);
+    border-right: 1px solid var(--gris-borde);
+    border-bottom: 1px solid var(--gris-borde);
 }
 
 .feature-box h3 {
-    color: var(--azul-oscuro);
-    margin-top: 0;
-    margin-bottom: 15px;
+    color: var(--azul-primario);
     font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
 
 .feature-box p {
-    color: #555;
-    font-size: 15px;
-    line-height: 1.6;
+    color: var(--texto-mutado);
     margin: 0;
+    font-size: 15px;
 }
 
-/* ==============================
-   CATÁLOGO DESTACADO
-   ============================== */
-.catalogo-destacado {
-    padding: 80px 50px;
+/* ==============================================
+   6. INDUSTRIAS Y CATÁLOGO
+   ============================================== */
+.industrias-sectores {
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    padding: 80px 5%;
     text-align: center;
-    background-color: var(--blanco);
 }
 
-.catalogo-destacado h2 {
-    font-size: 36px;
-    color: var(--azul-oscuro);
-    margin-top: 0;
-    margin-bottom: 50px;
+.cabecera-industrias h2 {
+    font-size: 34px;
+    font-weight: 800;
+    margin: 0 0 12px 0;
 }
 
-.catalogo-destacado h2 span {
+.cabecera-industrias h2 span {
     color: var(--naranja);
 }
 
-.carrusel {
+.cabecera-industrias p {
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto 45px auto;
+}
+
+.grid-industrias {
     display: grid;
-    /* Esto hace que las columnas se adapten solas. Si la pantalla es pequeña, se ponen una debajo de otra */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
-.tarjeta-categoria {
-    background: var(--blanco);
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
+.industria-card {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
 }
 
-.tarjeta-categoria:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-}
-
-.img-categoria {
-    width: 100%;
-    height: 180px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-size: cover;
-    background-position: center;
-}
-
-.tarjeta-categoria h3 {
-    color: var(--azul-oscuro);
-    margin: 0 0 10px 0;
-    font-size: 22px;
-}
-
-.tarjeta-categoria p {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 20px;
-    flex-grow: 1; /* Empuja el botón hacia abajo si el texto es corto */
-}
-
-.btn-link {
-    color: var(--naranja);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-    transition: 0.2s;
-}
-
-.btn-link:hover {
-    color: var(--naranja-hover);
-    text-decoration: underline;
-}
-/* ==============================
-   PÁGINAS INTERNAS (Banner Superior)
-   ============================== */
-.banner-interno {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    text-align: center;
-    padding: 60px 20px;
-}
-.banner-interno h1 {
-    font-size: 40px;
-    margin: 0 0 15px 0;
-}
-.banner-interno h1 span {
-    color: var(--naranja);
-}
-.banner-interno p {
-    font-size: 18px;
-    margin: 0;
-    opacity: 0.9;
-}
-
-/* ==============================
-   SECCIÓN DE CONTACTO
-   ============================== */
-.contenedor-contacto {
-    display: flex;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 50px;
-    gap: 60px;
-}
-
-.info-contacto {
-    flex: 1;
-}
-
-.info-contacto h2, .formulario-contacto h2 {
-    color: var(--azul-oscuro);
-    margin-top: 0;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.lista-contacto {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-.lista-contacto li {
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #444;
-    line-height: 1.5;
-}
-
-.lista-contacto li strong {
-    color: var(--azul-oscuro);
-}
-
-.formulario-contacto {
-    flex: 1;
-    background-color: var(--blanco);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border-top: 4px solid var(--naranja);
-}
-
-.grupo-input {
-    margin-bottom: 20px;
-}
-
-.grupo-input label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--azul-oscuro);
-    font-size: 14px;
-}
-
-.grupo-input input, 
-.grupo-input textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 15px;
-    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
-    transition: border-color 0.3s;
-}
-
-.grupo-input input:focus, 
-.grupo-input textarea:focus {
-    outline: none;
+.industria-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.08);
     border-color: var(--naranja);
 }
 
-.boton-enviar {
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-}
-/* ==============================
-   PÁGINA ¿QUIÉNES SOMOS?
-   ============================== */
-.contenedor-nosotros {
-    display: flex;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 50px;
-    gap: 60px;
-    align-items: center; /* Centra verticalmente el texto y la imagen */
-}
-
-.texto-nosotros {
-    flex: 1;
-}
-
-.texto-nosotros h2 {
-    color: var(--azul-oscuro);
-    font-size: 32px;
-    margin-top: 0;
-    margin-bottom: 25px;
-    line-height: 1.2;
-}
-
-.texto-nosotros h2 span {
-    color: var(--naranja);
-}
-
-.texto-nosotros p {
-    font-size: 17px;
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.caja-destacada {
-    background-color: var(--gris-claro);
-    border-left: 5px solid var(--naranja);
-    padding: 25px;
-    margin-top: 30px;
-    font-size: 18px;
-    color: var(--azul-oscuro);
-    line-height: 1.6;
-    border-radius: 0 8px 8px 0;
-}
-
-.caja-destacada strong {
-    color: var(--naranja);
-    display: block;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.imagen-nosotros {
-    flex: 1;
-}
-
-.imagen-nosotros img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    /* Ajustamos la altura para que no sea excesivamente grande */
-    height: 450px; 
-    object-fit: cover; 
-}
-
-/* Sección de Valores Inferior */
-.seccion-valores {
-    background-color: var(--azul-oscuro);
-    padding: 60px 50px;
-    margin-top: 60px;
-    color: var(--blanco);
-}
-
-.valores-grid {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
-    justify-content: space-between;
-}
-
-.valor-item {
-    flex: 1;
-    text-align: center;
-    background-color: rgba(255,255,255,0.05);
-    padding: 40px 20px;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.valor-item:hover {
-    transform: translateY(-10px);
-    background-color: rgba(255,255,255,0.1);
-}
-
-.icono-valor {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.valor-item h3 {
-    color: var(--naranja);
+.icono-industria {
+    font-size: 42px;
     margin-bottom: 15px;
-    font-size: 22px;
 }
 
-.valor-item p {
-    font-size: 15px;
-    line-height: 1.6;
-    opacity: 0.9;
-}   
-/* ==============================
-   PÁGINA DE CATÁLOGO COMPLETO
-   ============================== */
-.contenedor-catalogo {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 50px;
+.industria-card h3 {
+    color: var(--naranja);
+    font-size: 19px;
+    margin: 0 0 10px 0;
 }
 
-.seccion-categoria {
-    margin-bottom: 60px;
+.industria-card p {
+    font-size: 14px;
+    color: #e2e8f0;
+    margin: 0;
+}
+
+/* Catálogo */
+.contenedor-catalogo, .catalogo-destacado {
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
 .cabecera-categoria {
-    text-align: left;
-    margin-bottom: 30px;
     border-left: 5px solid var(--naranja);
-    padding-left: 20px;
+    padding-left: 18px;
+    margin-bottom: 25px;
 }
 
 .cabecera-categoria h2 {
-    color: var(--azul-oscuro);
-    font-size: 32px;
-    margin: 0 0 10px 0;
+    color: var(--azul-primario);
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
 }
 
 .cabecera-categoria h2 span {
     color: var(--naranja);
 }
 
-.cabecera-categoria p {
-    color: #555;
-    font-size: 16px;
-    margin: 0;
-    max-width: 800px;
+.carrusel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-categoria {
+    background: #ffffff;
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-categoria:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.img-categoria {
+    width: 100%;
+    height: 190px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--gris-fondo);
+}
+
+.tarjeta-categoria h3 {
+    color: var(--azul-primario);
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.tarjeta-categoria p {
+    color: var(--texto-mutado);
+    font-size: 14px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.btn-pdf {
+    display: inline-block;
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.25s ease;
+}
+
+.btn-pdf:hover {
+    background-color: var(--naranja);
 }
 
 .separador-catalogo {
     border: 0;
     height: 1px;
-    background-color: #ddd;
-    margin: 60px 0;
+    background-color: var(--gris-borde);
+    margin: 50px 0;
 }
+
 /* ==============================================
-   ADAPTACIÓN PARA MÓVILES Y TABLETAS (Responsive)
+   7. NOSOTROS Y VALORES
    ============================================== */
-
-/* Estilos por defecto del botón menú (oculto en ordenador) */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: var(--azul-oscuro);
-    cursor: pointer;
-    padding: 5px 10px;
+.contenedor-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 0 20px;
+    align-items: center;
 }
 
-@media (max-width: 768px) {
-    /* 1. CABECERA Y MENÚ MÓVIL */
-    header {
-        padding: 15px 20px;
-    }
-
-    .menu-toggle {
-        display: block; /* Muestra el botón ☰ en móviles */
-    }
-
-    nav {
-        display: none; /* Oculta el menú por defecto */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--blanco);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        padding: 20px 0;
-    }
-
-    /* Clase que activa JavaScript para mostrar el menú */
-    nav.activo {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    nav a {
-        font-size: 16px;
-        display: block;
-        padding: 8px 0;
-    }
-
-    .btn-header {
-        margin-top: 10px;
-    }
-
-    /* 2. HERO / BANNER PRINCIPAL */
-    .hero {
-        padding: 60px 20px;
-        min-height: auto;
-        text-align: center;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .botones-hero {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .btn-principal, .btn-secundario {
-        width: 100%;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    /* 3. CARACTERÍSTICAS (3 Columnas a 1 Columna) */
-    .caracteristicas {
-        flex-direction: column;
-        padding: 30px 20px;
-    }
-
-    /* 4. PÁGINA DE CONTACTO */
-    .contenedor-contacto {
-        flex-direction: column;
-        padding: 0 20px;
-        margin: 30px auto;
-        gap: 30px;
-    }
-
-    .formulario-contacto {
-        padding: 25px 20px;
-    }
-
-    /* 5. PÁGINA ¿QUIÉNES SOMOS? */
-    .contenedor-nosotros {
-        flex-direction: column-reverse; /* Pone el texto arriba y la foto abajo */
-        padding: 0 20px;
-        margin: 30px auto;
-        gap: 30px;
-    }
-
-    .imagen-nosotros img {
-        height: 250px;
-    }
-
-    .valores-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .seccion-valores {
-        padding: 40px 20px;
-    }
-
-    /* 6. PÁGINA DE PRODUCTO Y CATÁLOGO */
-    .producto-contenedor {
-        flex-direction: column;
-        padding: 30px 20px;
-        gap: 30px;
-    }
-
-    .contenedor-catalogo {
-        padding: 0 20px;
-        margin: 30px auto;
-    }
-
-    .catalogo-destacado {
-        padding: 50px 20px;
-    }
-}
-/* ==============================
-   BOTÓN PARA ABRIR PDF
-   ============================== */
-.btn-pdf {
-    display: inline-block;
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
+.texto-nosotros h2 {
+    color: var(--azul-primario);
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 0;
 }
 
-.btn-pdf:hover {
-    background-color: var(--naranja);
-    color: var(--blanco);
-}
-/* ==============================
-   PIE DE PÁGINA (FOOTER)
-   ============================== */
-footer {
-    background-color: var(--azul-oscuro);
-    color: var(--blanco);
-    text-align: center;
-    padding: 50px 20px 20px 20px;
-    margin-top: auto; /* Empuja el footer siempre abajo */
-}
-
-.footer-contenido {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.footer-logo {
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-
-.footer-logo span {
+.texto-nosotros h2 span {
     color: var(--naranja);
 }
 
+.caja-destacada {
+    background-color: var(--gris-fondo);
+    border-left: 5px solid var(--naranja);
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+.caja-destacada strong {
+    color: var(--naranja);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.imagen-nosotros img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.seccion-valores {
+    background-color: var(--azul-primario);
+    padding: 60px 5%;
+    color: #ffffff;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.valor-item {
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: 35px 25px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.icono-valor {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.valor-item h3 {
+    color: var(--naranja);
+    margin: 0 0 10px 0;
+}
+
+/* ==============================================
+   8. PIE DE PÁGINA (FOOTER)
+   ============================================== */
+footer {
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px 25px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-contenido {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
 .footer-contenido p {
-    color: #a0aec0;
+    color: #94a3b8;
     margin-bottom: 20px;
     font-size: 15px;
 }
@@ -700,21 +661,155 @@ footer {
 .footer-garco {
     display: inline-block;
     border: 1px solid var(--naranja);
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin-bottom: 30px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    margin-bottom: 25px;
     font-size: 14px;
     color: #cbd5e1;
 }
 
 .footer-garco strong {
-    color: var(--blanco);
-    font-size: 16px;
+    color: #ffffff;
 }
 
 .footer-legal {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 20px;
     font-size: 13px;
-    color: #718096;
+    color: #64748b;
+}
+
+/* ==============================================
+   9. ADAPTACIÓN RESPONSIVE (MÓVILES Y TABLETS)
+   ============================================== */
+@media (max-width: 900px) {
+    .contenedor-contacto,
+    .contenedor-nosotros {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header, #cabecera {
+        padding: 12px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        border-bottom: 2px solid var(--naranja);
+    }
+
+    nav.activo {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .botones-hero {
+        flex-direction: column;
+    }
+
+    .banner-interno h1 {
+        font-size: 30px;
+    }
+
+    .formulario-contacto, .info-contacto {
+        padding: 25px 20px;
+    }
+}
+/* ==============================================
+   ESTILO IMÁGENES TARJETAS CATÁLOGO
+   ============================================== */
+.contenedor-img-tarjeta {
+    width: 100%;
+    height: 180px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    margin-bottom: 15px;
+}
+
+.contenedor-img-tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se deforme y la recorta de forma limpia */
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-categoria:hover .contenedor-img-tarjeta img {
+    transform: scale(1.05); /* Efecto zoom elegante al pasar el ratón */
+}
+/* ==============================================
+   SECCIÓN HERO / BANNER PRINCIPAL DINÁMICO
+   ============================================== */
+.hero {
+    position: relative;
+    background-color: var(--azul-primario);
+    background-image: linear-gradient(135deg, rgba(10, 25, 47, 0.90) 0%, rgba(10, 25, 47, 0.65) 100%), url('images/ChatGPT Image 30 jul 2026, 13_36_17.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 110px 5%;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-contenido {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 44px;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 span {
+    color: var(--naranja);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 35px;
+    color: #e2e8f0;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.botones-hero {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
