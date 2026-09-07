@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belts Trading | Bandas Transportadoras y Componentes</title>
+    <title>Contacto | Belts Trading</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,91 +20,73 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">¿Quiénes somos?</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="contacto.html" class="btn-header">📄 Solicitar Cotización</a></li>
+                <li><a href="contacto.html" class="activo">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-contenido">
-            <h1>Bandas trading, <span>endine industrial</span></h1>
-            <p>Imdoãon emdotación covinerte bandas de goma a camonar no esturan aheo de industrial.</p>
-            
-            <div class="botones-hero">
-                <a href="catalogo.html" class="btn-principal">Comprar servicios</a>
-                <a href="contacto.html" class="btn-secundario">Contacta resoluto</a>
-            </div>
-        </div>
-    </section>
+    <div class="banner-interno">
+        <h1>Contacta con <span>Nosotros</span></h1>
+        <p>Estamos listos para asesorarte y ofrecerte la mejor solución para tu industria.</p>
+    </div>
 
-    <section class="caracteristicas">
-        <div class="feature-box">
-            <h3>🛠️ Bandas PVC/PU</h3>
-            <p>Ewamanar un neva servicios de restoadores.</p>
-        </div>
-        <div class="feature-box">
-            <h3>📦 Bandas Modulares</h3>
-            <p>Gualstando matrar los nuestros serviaofios.</p>
-        </div>
-        <div class="feature-box">
-            <h3>🛡️ Bandas de Goma</h3>
-            <p>Pasatortados en servicios y de restoedores.</p>
-        </div>
-        <div class="feature-box">
-            <h3>⚙️ Componentes</h3>
-            <p>Postenix del me te rresponido en componeno.</p>
-        </div>
-    </section>
-
-    <section class="catalogo-destacado">
-        <h2>Catálogo Destacado</h2>
+    <main class="contenedor-contacto">
         
-        <div class="carrusel">
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/image_5d85f9.jpg" alt="Bandas PVC/PU">
-                </div>
-                <h3>Bandas PVC/PU</h3>
-                <p>images/image_5d85f9.jpg</p>
-                <a href="catalogo.html" class="btn-pdf">Contornstar</a>
-            </div>
+        <div class="info-contacto">
+            <h2>Nuestras Oficinas</h2>
+            <p>Ponte en contacto con nuestro equipo de ventas o soporte técnico a través de los siguientes canales:</p>
+            
+            <ul class="lista-contacto">
+                <li>📍 <strong>Dirección:</strong> A Coruña, España.</li>
+                <li>📞 <strong>Teléfonos:</strong> +34 622 457 701 / +34 674 915 558</li>
+                <li>✉️ <strong>Correo:</strong> belts.trading@gmail.com</li>
+                <li>🏢 <strong>Empresa:</strong> Belts Trading pertenece a <strong>GARCO TRADING GROUP</strong>.</li>
+            </ul>
 
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/banda.jpg" alt="Bandas Modulares">
-                </div>
-                <h3>Bandas Modulares</h3>
-                <p>images/banda.jpg</p>
-                <a href="catalogo.html" class="btn-pdf">Compowtar</a>
-            </div>
-
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/image.jpeg" alt="Bandas de Goma">
-                </div>
-                <h3>Bandas de Goma</h3>
-                <p>images/image.jpeg</p>
-                <a href="catalogo.html" class="btn-pdf">Contranetar</a>
-            </div>
-
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/1651144392.jpg" alt="Componentes">
-                </div>
-                <h3>Componentes</h3>
-                <p>images/1651144392.jpg</p>
-                <a href="catalogo.html" class="btn-pdf">Compoostar</a>
-            </div>
+            <a href="https://wa.me/34622457701?text=Hola,%20me%20gustaría%20solicitar%20información" target="_blank" class="btn-whatsapp">
+                💬 Habla con un experto por WhatsApp
+            </a>
         </div>
-    </section>
+
+        <div class="formulario-contacto">
+            <h2>Envíanos un mensaje</h2>
+            <form action="https://formsubmit.co/belts.trading@gmail.com" method="POST" id="form-contacto">
+                
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="grupo-input">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensaje">Mensaje o solicitud de cotización *</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal boton-enviar">Enviar Mensaje</button>
+            </form>
+        </div>
+    </main>
 
     <script src="main.js"></script>
-
+    
     <footer>
         <div class="footer-contenido">
             <div class="footer-logo">
-                <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
+                <a href="index.html">
+                    <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
+                </a>
             </div>
             <p>Especialistas en bandas transportadoras y componentes industriales.</p>
             <div class="footer-garco">
