@@ -1,5 +1,132 @@
 /* ==============================================
-   SECCIÓN HERO / BANNER PRINCIPAL DINÁMICO
+   BELTS TRADING - ESTILOS CORPORATIVOS B2B (2026)
+   ============================================== */
+
+/* 1. VARIABLES DE COLOR Y CONFIGURACIÓN GLOBAL */
+:root {
+    --azul-primario: #0a192f;
+    --azul-secundario: #1e293b;
+    --naranja: #ff6600;
+    --naranja-hover: #e65c00;
+    --verde-wa: #25D366;
+    --verde-wa-hover: #128C7E;
+    --gris-fondo: #f8fafc;
+    --gris-card: #ffffff;
+    --gris-borde: #e2e8f0;
+    --texto-oscuro: #0f172a;
+    --texto-mutado: #64748b;
+    --sombra-suave: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    --sombra-tarjeta: 0 15px 30px -10px rgba(10, 25, 47, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* ==============================================
+   2. CABECERA Y NAVEGACIÓN (HEADER)
+   ============================================== */
+header, #cabecera {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--gris-borde);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+}
+
+.logo img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--azul-primario);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--naranja);
+    background-color: rgba(255, 102, 0, 0.06);
+}
+
+nav a.activo {
+    color: var(--naranja);
+    font-weight: 700;
+    background-color: rgba(255, 102, 0, 0.08);
+}
+
+.btn-header {
+    background-color: var(--azul-primario) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
+}
+
+.btn-header:hover {
+    background-color: var(--azul-secundario) !important;
+    transform: translateY(-1px);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--azul-primario);
+    cursor: pointer;
+}
+
+/* ==============================================
+   3. SECCIÓN HERO / BANNER PRINCIPAL DINÁMICO
    ============================================== */
 .hero {
     position: relative;
@@ -48,33 +175,321 @@
     gap: 15px;
     flex-wrap: wrap;
 }
+
 /* ==============================================
-   LOGO CABECERA (LINK A HOME)
+   4. BOTONES GLOBALES Y BANNER INTERNO
    ============================================== */
-header #cabecera, header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 5%;
-    background-color: #ffffff;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
+.btn-principal {
+    background-color: var(--naranja);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 14px 28px;
+    border-radius: 8px;
     text-decoration: none;
-    outline: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.25);
+    display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
-.logo img {
-    height: 52px; /* Altura fija elegante para el logo */
-    width: auto;
-    object-fit: contain;
-    border-radius: 4px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+.btn-principal:hover {
+    background-color: var(--naranja-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.35);
 }
 
-.logo:hover img {
-    transform: scale(1.03); /* Efecto de toque al pasar el cursor */
-    opacity: 0.95;
+.btn-secundario {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 28px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+.btn-secundario:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.banner-interno {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 20px;
+    border-bottom: 4px solid var(--naranja);
+}
+
+.banner-interno h1 {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.banner-interno h1 span {
+    color: var(--naranja);
+}
+
+/* ==============================================
+   5. CARACTERÍSTICAS (SERVICIOS)
+   ============================================== */
+.caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
+    border-top: 4px solid var(--naranja);
+    border: 1px solid var(--gris-borde);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-box h3 {
+    color: var(--azul-primario);
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.feature-box p {
+    color: var(--texto-mutado);
+    margin: 0;
+    font-size: 15px;
+}
+
+/* ==============================================
+   6. CATÁLOGO Y TARJETAS DE IMÁGENES
+   ============================================== */
+.catalogo-destacado, .contenedor-catalogo {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 5%;
+}
+
+.catalogo-destacado h2, .cabecera-categoria h2 {
+    color: var(--azul-primario);
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.carrusel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-categoria {
+    background: #ffffff;
+    border: 1px solid var(--gris-borde);
+    border-radius: 10px;
+    padding: 22px;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-categoria:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.contenedor-img-tarjeta {
+    width: 100%;
+    height: 180px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: var(--gris-fondo);
+    margin-bottom: 20px;
+}
+
+.contenedor-img-tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-categoria:hover .contenedor-img-tarjeta img {
+    transform: scale(1.05);
+}
+
+.tarjeta-categoria h3 {
+    color: var(--azul-primario);
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.tarjeta-categoria p {
+    color: var(--texto-mutado);
+    font-size: 14px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.btn-pdf {
+    display: inline-block;
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background-color 0.25s ease;
+}
+
+.btn-pdf:hover {
+    background-color: var(--naranja);
+}
+
+/* ==============================================
+   7. CONTACTO (FORMULARIO E INFO)
+   ============================================== */
+.contenedor-contacto {
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 40px;
+}
+
+.info-contacto, .formulario-contacto {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.info-contacto h2, .formulario-contacto h2 {
+    color: var(--azul-primario);
+    margin-top: 0;
+}
+
+.lista-contacto li {
+    padding: 12px 16px;
+    background-color: var(--gris-fondo);
+    border-radius: 8px;
+    margin-bottom: 14px;
+    list-style: none;
+}
+
+.btn-whatsapp {
+    display: block;
+    background-color: var(--verde-wa);
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+}
+
+.grupo-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--azul-primario);
+}
+
+.grupo-input input, .grupo-input textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid var(--gris-borde);
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+/* ==============================================
+   8. PIE DE PÁGINA (FOOTER)
+   ============================================== */
+footer {
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px 25px 20px;
+    margin-top: 50px;
+}
+
+.footer-contenido {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.footer-garco {
+    display: inline-block;
+    border: 1px solid var(--naranja);
+    padding: 8px 18px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.footer-garco strong {
+    color: #ffffff;
+}
+
+.footer-legal {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* ==============================================
+   9. RESPONSIVE (MÓVILES)
+   ============================================== */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    nav.activo { display: block; }
+    nav ul { flex-direction: column; gap: 15px; }
+    
+    .hero { padding: 60px 20px; text-align: center; }
+    .hero h1 { font-size: 32px; }
+    .botones-hero { justify-content: center; }
+    
+    .contenedor-contacto { grid-template-columns: 1fr; }
 }
