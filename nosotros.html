@@ -9,13 +9,19 @@
 <body>
 
     <header id="cabecera">
-        <a href="index.html" class="logo">BELTS <span>TRADING</span></a>
-        <nav>
+        <a href="index.html" class="logo" title="Ir a Inicio">
+            <img src="images/logo belts.jpeg" alt="Belts Trading - Ir a Inicio">
+        </a>
+        
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+        <nav id="navMenu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html" class="activo">¿Quiénes somos?</a></li>
-                <li><a href="catalogo.html">Catálogo </a></li>
+                <li><a href="nosotros.html">¿Quiénes somos?</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.html" class="btn-header">📄 Solicitar Cotización</a></li>
             </ul>
         </nav>
     </header>
@@ -26,7 +32,6 @@
     </div>
 
     <main class="contenedor-nosotros">
-        
         <div class="texto-nosotros">
             <h2>Especialistas en soluciones para el <span>transporte industrial</span></h2>
             
@@ -40,9 +45,8 @@
         </div>
 
         <div class="imagen-nosotros">
-            <img src="images/home.png" alt="Instalaciones de Belts Trading">
+            <img src="images/image (2).jpeg" alt="Instalaciones y equipo de Belts Trading">
         </div>
-
     </main>
 
     <section class="seccion-valores">
@@ -64,10 +68,13 @@
             </div>
         </div>
     </section>
+
+    <script src="main.js"></script>
+
     <footer>
         <div class="footer-contenido">
             <div class="footer-logo">
-                BELTS <span>TRADING</span>
+                <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
             </div>
             <p>Especialistas en bandas transportadoras y componentes industriales.</p>
             <div class="footer-garco">
@@ -78,6 +85,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
