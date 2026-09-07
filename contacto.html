@@ -32,15 +32,44 @@
             <p>Ponte en contacto con nuestro equipo de ventas o soporte técnico a través de los siguientes canales:</p>
             
             <ul class="lista-contacto">
-                <li>📍 <strong>Dirección:</strong> ?    </li>
-                <li>📞 <strong>Teléfono:</strong> +34 numero? </li>
+                <li>📍 <strong>Dirección:</strong> A Coruña, España.</li>
+                <li>📞 <strong>Teléfonos:</strong> +34 622 457 701 / +34 674 915 558</li>
                 <li>✉️ <strong>Correo:</strong> belts.trading@gmail.com</li>
-                <li>⏰ <strong>Horario:</strong> ?  </li>
+                <li>🏢 <strong>Empresa:</strong> Belts Trading pertenece a <strong>GARCO TRADING GROUP</strong>.</li>
             </ul>
 
-            <a href="https://wa.me/34600000000?text=Hola,%20me%20gustaría%20solicitar%20información" target="_blank" class="btn-whatsapp">
+            <a href="https://wa.me/34622457701?text=Hola,%20me%20gustaría%20solicitar%20información" target="_blank" class="btn-whatsapp">
                 💬 Habla con un experto por WhatsApp
             </a>
+        </div>
+
+        <div class="formulario-contacto">
+            <h2>Envíanos un mensaje</h2>
+            <form action="https://formsubmit.co/belts.trading@gmail.com" method="POST" id="form-contacto">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="grupo-input">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensaje">Mensaje o solicitud de cotización *</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal boton-enviar">Enviar Mensaje</button>
+            </form>
         </div>
 
         <div class="formulario-contacto">
@@ -81,5 +110,19 @@
             this.reset();
         });
     </script>
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-logo">
+                BELTS <span>TRADING</span>
+            </div>
+            <p>Especialistas en bandas transportadoras y componentes industriales.</p>
+            <div class="footer-garco">
+                Una empresa perteneciente a <strong>GARCO TRADING GROUP</strong>
+            </div>
+            <div class="footer-legal">
+                &copy; 2026 Belts Trading. A Coruña, España. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
