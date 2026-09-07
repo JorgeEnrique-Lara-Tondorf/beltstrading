@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Belts Trading</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header id="cabecera">
+        <a href="index.html" class="logo">BELTS <span>TRADING</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">¿Quiénes somos?</a></li>
+                <li><a href="catalogo.html">Catálogo ⌄</a></li>
+                <li><a href="contacto.html" class="activo">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner-interno">
+        <h1>Contacta con <span>Nosotros</span></h1>
+        <p>Estamos listos para asesorarte y ofrecerte la mejor solución para tu industria.</p>
+    </div>
+
+    <main class="contenedor-contacto">
+        
+        <div class="info-contacto">
+            <h2>Nuestras Oficinas</h2>
+            <p>Ponte en contacto con nuestro equipo de ventas o soporte técnico a través de los siguientes canales:</p>
+            
+            <ul class="lista-contacto">
+                <li>📍 <strong>Dirección:</strong> ?    </li>
+                <li>📞 <strong>Teléfono:</strong> +34 numero? </li>
+                <li>✉️ <strong>Correo:</strong> belts.trading@gmail.com</li>
+                <li>⏰ <strong>Horario:</strong> ?  </li>
+            </ul>
+
+            <a href="https://wa.me/34600000000?text=Hola,%20me%20gustaría%20solicitar%20información" target="_blank" class="btn-whatsapp">
+                💬 Habla con un experto por WhatsApp
+            </a>
+        </div>
+
+        <div class="formulario-contacto">
+            <h2>Envíanos un mensaje</h2>
+            <form id="form-contacto">
+                <div class="grupo-input">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensaje">Mensaje o solicitud de cotización *</label>
+                    <textarea id="mensaje" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal boton-enviar">Enviar Mensaje</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('form-contacto').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias! Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

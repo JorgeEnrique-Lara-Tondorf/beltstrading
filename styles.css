@@ -1,0 +1,465 @@
+/* ==============================
+   VARIABLES DE COLORES
+   ============================== */
+:root {
+    --azul-oscuro: #0a192f;
+    --naranja: #ff6600;
+    --naranja-hover: #e65c00;
+    --gris-claro: #f4f6f9;
+    --blanco: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   NAVEGACIÓN (HEADER)
+   ============================== */
+header {
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--azul-oscuro);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo span { color: var(--naranja); }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+nav a.activo {
+    border-bottom: 3px solid var(--naranja);
+    padding-bottom: 5px;
+}
+
+.btn-header {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-header:hover { background-color: #172a48; color: var(--blanco); }
+
+/* ==============================
+   BANNER PRINCIPAL (HERO)
+   ============================== */
+.hero {
+    background-color: var(--azul-oscuro); 
+    /* AQUÍ ESTÁ EL CAMBIO: Añadimos images/ antes de home.png */
+    background-image: linear-gradient(to right, rgba(10, 25, 47, 0.9) 40%, rgba(10, 25, 47, 0.4)), url('images/home.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco);
+    padding: 100px 50px;
+    min-height: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    max-width: 800px;
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+}
+
+.hero h1 span { color: var(--naranja); }
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.botones-hero {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-principal, .btn-secundario {
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-principal {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
+.btn-principal:hover { background-color: var(--naranja-hover); }
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--blanco);
+    border: 2px solid var(--blanco);
+}
+.btn-secundario:hover { background-color: rgba(255,255,255,0.1); }
+/* ==============================
+   CARACTERÍSTICAS (3 Columnas)
+   ============================== */
+.caracteristicas {
+    display: flex;
+    background-color: var(--gris-claro);
+    padding: 40px 50px;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-box {
+    flex: 1;
+    text-align: left;
+    padding: 30px;
+    background: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--naranja);
+}
+
+.feature-box h3 {
+    color: var(--azul-oscuro);
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.feature-box p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==============================
+   CATÁLOGO DESTACADO
+   ============================== */
+.catalogo-destacado {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: var(--blanco);
+}
+
+.catalogo-destacado h2 {
+    font-size: 36px;
+    color: var(--azul-oscuro);
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.catalogo-destacado h2 span {
+    color: var(--naranja);
+}
+
+.carrusel {
+    display: grid;
+    /* Esto hace que las columnas se adapten solas. Si la pantalla es pequeña, se ponen una debajo de otra */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-categoria {
+    background: var(--blanco);
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-categoria:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.img-categoria {
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.tarjeta-categoria h3 {
+    color: var(--azul-oscuro);
+    margin: 0 0 10px 0;
+    font-size: 22px;
+}
+
+.tarjeta-categoria p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empuja el botón hacia abajo si el texto es corto */
+}
+
+.btn-link {
+    color: var(--naranja);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.btn-link:hover {
+    color: var(--naranja-hover);
+    text-decoration: underline;
+}
+/* ==============================
+   PÁGINAS INTERNAS (Banner Superior)
+   ============================== */
+.banner-interno {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 60px 20px;
+}
+.banner-interno h1 {
+    font-size: 40px;
+    margin: 0 0 15px 0;
+}
+.banner-interno h1 span {
+    color: var(--naranja);
+}
+.banner-interno p {
+    font-size: 18px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ==============================
+   SECCIÓN DE CONTACTO
+   ============================== */
+.contenedor-contacto {
+    display: flex;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 50px;
+    gap: 60px;
+}
+
+.info-contacto {
+    flex: 1;
+}
+
+.info-contacto h2, .formulario-contacto h2 {
+    color: var(--azul-oscuro);
+    margin-top: 0;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.lista-contacto li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.lista-contacto li strong {
+    color: var(--azul-oscuro);
+}
+
+.formulario-contacto {
+    flex: 1;
+    background-color: var(--blanco);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--naranja);
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+}
+
+.grupo-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    font-size: 14px;
+}
+
+.grupo-input input, 
+.grupo-input textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 15px;
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus, 
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: var(--naranja);
+}
+
+.boton-enviar {
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+/* ==============================
+   PÁGINA ¿QUIÉNES SOMOS?
+   ============================== */
+.contenedor-nosotros {
+    display: flex;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 50px;
+    gap: 60px;
+    align-items: center; /* Centra verticalmente el texto y la imagen */
+}
+
+.texto-nosotros {
+    flex: 1;
+}
+
+.texto-nosotros h2 {
+    color: var(--azul-oscuro);
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.texto-nosotros h2 span {
+    color: var(--naranja);
+}
+
+.texto-nosotros p {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.caja-destacada {
+    background-color: var(--gris-claro);
+    border-left: 5px solid var(--naranja);
+    padding: 25px;
+    margin-top: 30px;
+    font-size: 18px;
+    color: var(--azul-oscuro);
+    line-height: 1.6;
+    border-radius: 0 8px 8px 0;
+}
+
+.caja-destacada strong {
+    color: var(--naranja);
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.imagen-nosotros {
+    flex: 1;
+}
+
+.imagen-nosotros img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Ajustamos la altura para que no sea excesivamente grande */
+    height: 450px; 
+    object-fit: cover; 
+}
+
+/* Sección de Valores Inferior */
+.seccion-valores {
+    background-color: var(--azul-oscuro);
+    padding: 60px 50px;
+    margin-top: 60px;
+    color: var(--blanco);
+}
+
+.valores-grid {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.valor-item {
+    flex: 1;
+    text-align: center;
+    background-color: rgba(255,255,255,0.05);
+    padding: 40px 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.valor-item:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255,255,255,0.1);
+}
+
+.icono-valor {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.valor-item h3 {
+    color: var(--naranja);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.valor-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}

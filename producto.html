@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda PVC Lisa Blanca | Belts Trading</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para la página de producto */
+        .producto-contenedor {
+            display: flex;
+            gap: 50px;
+            padding: 60px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .producto-galeria {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .imagen-principal {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .galeria-miniaturas {
+            display: flex;
+            gap: 15px;
+        }
+        .galeria-miniaturas img {
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .galeria-miniaturas img:hover {
+            border-color: var(--naranja);
+        }
+        .producto-info {
+            flex: 1;
+        }
+        .producto-info h1 {
+            color: var(--azul-oscuro);
+            font-size: 36px;
+            margin-top: 0;
+        }
+        .categoria-etiqueta {
+            background-color: var(--naranja);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .especificaciones {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        .especificaciones th, .especificaciones td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .especificaciones th {
+            background-color: var(--gris-claro);
+            color: var(--azul-oscuro);
+            width: 40%;
+        }
+        .btn-whatsapp {
+            background-color: #25D366; /* Color oficial de WhatsApp */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+        .btn-whatsapp:hover { background-color: #128C7E; }
+    </style>
+</head>
+<body>
+
+    <header id="cabecera">
+        <a href="index.html" class="logo">BELTS <span>TRADING</span></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="producto-contenedor">
+        
+        <div class="producto-galeria">
+            <img src="images/21 jul 2026, 12_13_15.png" alt="Banda PVC Lisa" class="imagen-principal" id="imgPrincipal">
+            
+            <div class="galeria-miniaturas">
+                <img src="images/21 jul 2026, 12_13_15.png" onclick="cambiarImagen(this.src)">
+                <img src="images/21 jul 2026, 12_13_22.png" onclick="cambiarImagen(this.src)">
+            </div>
+        </div>
+
+        <div class="producto-info">
+            <span class="categoria-etiqueta">Bandas de PVC</span>
+            <h1>Banda PVC Lisa Blanca</h1>
+            <p>Banda transportadora de alta resistencia con recubrimiento de PVC liso. Diseñada específicamente para cumplir con normativas FDA en la industria alimentaria, ofreciendo excelente resistencia a grasas y aceites.</p>
+            
+            <table class="especificaciones">
+                <tr>
+                    <th>Material</th>
+                    <td>PVC (Clasificación Alimentaria)</td>
+                </tr>
+                <tr>
+                    <th>Superficie</th>
+                    <td>Lisa / Brillante</td>
+                </tr>
+                <tr>
+                    <th>Número de Telas</th>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <th>Espesor Total</th>
+                    <td>2.0 mm</td>
+                </tr>
+                <tr>
+                    <th>Temperatura de Trabajo</th>
+                    <td>-10°C hasta 80°C</td>
+                </tr>
+            </table>
+
+            <a href="https://wa.me/34600000000?text=Hola,%20necesito%20cotizar%20la%20Banda%20PVC%20Lisa%20Blanca" target="_blank" class="btn-whatsapp">
+                💬 Consultar por WhatsApp
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Pequeño script para que al hacer clic en las miniaturas, cambie la imagen grande
+        function cambiarImagen(ruta) {
+            document.getElementById('imgPrincipal').src = ruta;
+        }
+    </script>
+</body>
+</html> 
