@@ -665,3 +665,56 @@ nav a.activo {
     background-color: var(--naranja);
     color: var(--blanco);
 }
+/* ==============================
+   PIE DE PÁGINA (FOOTER)
+   ============================== */
+footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 50px 20px 20px 20px;
+    margin-top: auto; /* Empuja el footer siempre abajo */
+}
+
+.footer-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: var(--naranja);
+}
+
+.footer-contenido p {
+    color: #a0aec0;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.footer-garco {
+    display: inline-block;
+    border: 1px solid var(--naranja);
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.footer-garco strong {
+    color: var(--blanco);
+    font-size: 16px;
+}
+
+.footer-legal {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 13px;
+    color: #718096;
+}
