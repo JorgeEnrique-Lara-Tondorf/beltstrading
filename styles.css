@@ -644,3 +644,24 @@ nav a.activo {
         padding: 50px 20px;
     }
 }
+/* ==============================
+   BOTÓN PARA ABRIR PDF
+   ============================== */
+.btn-pdf {
+    display: inline-block;
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-pdf:hover {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
