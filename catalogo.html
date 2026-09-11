@@ -3,14 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo | Belts Trading</title>
+    <title>Catálogo Oficial | Belts Trading</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ==============================================
+           ESTILOS EXCLUSIVOS DEL CATÁLOGO CORPORATIVO
+           ============================================== */
+        
+        /* Botones de Filtrado / Pestañas */
+        .selector-categorias {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 35px auto 25px auto;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .btn-categoria {
+            background-color: #ffffff;
+            color: #0a192f;
+            border: 2px solid #e2e8f0;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn-categoria:hover, .btn-categoria.activo {
+            background-color: #ff6600;
+            color: #ffffff;
+            border-color: #ff6600;
+            box-shadow: 0 6px 16px rgba(255, 102, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Animación y Ocultación de Secciones */
+        .bloque-catalogo {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .bloque-catalogo.activo {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Rejilla de Tarjetas Equilibrada */
+        .grid-pasos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 350px));
+            gap: 30px;
+            margin-top: 25px;
+            justify-content: start;
+        }
+
+        /* Tarjetas de Categoría con Estilo del Logo (Azul Marino + Naranja) */
+        .tarjeta-categoria {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 5px solid #ff6600; /* Línea Naranja Corporativa */
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 20px rgba(10, 25, 47, 0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .tarjeta-categoria:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(10, 25, 47, 0.12);
+            border-color: #cbd5e1;
+            border-top-color: #ff6600;
+        }
+
+        /* Contenedor de Imagen Limpio (Muestra la foto 100% completa) */
+        .contenedor-img-tarjeta {
+            width: 100%;
+            height: 210px; 
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #ffffff; /* Fondo blanco limpio para dibujos y fotos */
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f1f5f9;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .contenedor-img-tarjeta img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* ENCUADRE PERFECTO: No corta las fotos */
+            transition: transform 0.3s ease;
+        }
+
+        .tarjeta-categoria:hover .contenedor-img-tarjeta img {
+            transform: scale(1.04);
+        }
+
+        .tarjeta-categoria h3 {
+            color: #0a192f;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+        }
+
+        .tarjeta-categoria p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+            flex-grow: 1;
+            margin-bottom: 22px;
+        }
+
+        .btn-pdf {
+            display: inline-block;
+            background-color: #0a192f;
+            color: #ffffff;
+            padding: 12px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            transition: background-color 0.25s ease;
+        }
+
+        .btn-pdf:hover {
+            background-color: #ff6600;
+        }
+
+        .separador-catalogo {
+            border: 0;
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 50px 0;
+        }
+    </style>
 </head>
 <body>
 
     <header id="cabecera">
         <a href="index.html" class="logo" title="Ir a Inicio">
-            <img src="images/logo belts.jpeg" alt="Belts Trading - Ir a Inicio">
+            <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
         </a>
         
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
@@ -19,7 +168,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="nosotros.html">¿Quiénes somos?</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="catalogo.html" class="activo">Catálogo</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="contacto.html" class="btn-header">📄 Solicitar Cotización</a></li>
             </ul>
@@ -27,105 +176,247 @@
     </header>
 
     <div class="banner-interno">
-        <h1>Catálogo de <span>Productos</span></h1>
-        <p>Consulta o descarga nuestras fichas técnicas completas en formato PDF.</p>
+        <h1>Catálogo <span>Oficial de Productos</span></h1>
+        <p>Explora nuestras gamas completas de bandas transportadoras y componentes industriales.</p>
+    </div>
+
+    <div class="selector-categorias">
+        <button class="btn-categoria activo" onclick="filtrarCategoria('todas')">Ver Todo</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('modulares')"> Bandas Modulares</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('pvc-pu')">PVC / Poliuretano</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('goma')"> Goma</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('metalicas')"> Metálicas</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('colas')">🧪 Colas de Empalme</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('accesorios')"> Accesorios</button>
     </div>
 
     <main class="contenedor-catalogo">
-        
-        <div class="seccion-categoria">
+
+        <section id="modulares" class="bloque-catalogo todas modulares activo">
             <div class="cabecera-categoria">
-                <h2>Paso <span>50,8 mm</span> (Series BT50,8)</h2>
-                <p>Bandas modulares rectas diseñadas para transportadores largos, ofreciendo alta capacidad de carga y fácil limpieza.</p>
+                <h2>1. Bandas Transportadoras <span>Modulares</span></h2>
+                <p>Múltiples pasos y configuraciones para líneas rectas, curvas y procesos continuos.</p>
             </div>
-            
-            <div class="carrusel">
+
+            <div class="grid-pasos">
                 <div class="tarjeta-categoria">
-                    <div class="img-categoria" style="background-image: url('images/banda.jpg');"></div>
-                    <h3>Bandas Rectas BT50,8</h3>
-                    <p>Series EC, MD y HP. Materiales disponibles: Polipropileno (PP), Polietileno (PE) y Acetal (POM).</p>
-                    <a href="pdf/BANDAS MODULARES RECTAS.pdf" target="_blank" class="btn-pdf">
-                        📄 Ficha Técnica (PDF)
-                    </a>
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/21 jul 2026, 12_13_15.png" alt="Paso 50,8 mm">
+                    </div>
+                    <h3>Paso 50,8 mm (BT50,8)</h3>
+                    <p>Rectas de gran capacidad de carga, resistencia al impacto y alta durabilidad en líneas pesadas.</p>
+                    <a href="pdf/BANDAS MODULARES RECTAS.pdf" target="_blank" class="btn-pdf">📄 Ficha Técnica (PDF)</a>
                 </div>
-            </div>
-        </div>
 
-        <hr class="separador-catalogo">
-
-        <div class="seccion-categoria">
-            <div class="cabecera-categoria">
-                <h2>Paso <span>25,4 mm</span> (Series BT25,4)</h2>
-                <p>Soluciones modulares curvas que aportan máxima flexibilidad para circuitos complejos sin perder tracción.</p>
-            </div>
-            
-            <div class="carrusel">
                 <div class="tarjeta-categoria">
-                    <div class="img-categoria" style="background-image: url('images/nastri-curvilinei.jpg');"></div>
-                    <h3>Bandas Curvas BT25,4 R</h3>
-                    <p>Serie EC-FT-R. Superficie Flat Top con área abierta del 36%. Aprobación FDA/EU.</p>
-                    <a href="pdf/CATALOGO BANDAS MODULARES CURVAS.pdf" target="_blank" class="btn-pdf">
-                        📄 Ficha Técnica (PDF)
-                    </a>
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/21 jul 2026, 12_13_22.png" alt="Paso 25,4 mm">
+                    </div>
+                    <h3>Paso 25,4 mm (BT25,4)</h3>
+                    <p>Soluciones curvas y rectas versátiles. Disponibles en versiones Flat Top, Flush Grid y Curvas EC-FT-R.</p>
+                    <a href="pdf/CATALOGO BANDAS MODULARES CURVAS.pdf" target="_blank" class="btn-pdf">📄 Ficha Técnica (PDF)</a>
                 </div>
-            </div>
-        </div>
 
-        <hr class="separador-catalogo">
-
-        <div class="seccion-categoria">
-            <div class="cabecera-categoria">
-                <h2>Accesorios y <span>Componentes</span></h2>
-                <p>Piezas de repuesto y complementos fabricados a medida para garantizar el rendimiento óptimo.</p>
-            </div>
-            
-            <div class="carrusel">
                 <div class="tarjeta-categoria">
-                    <div class="img-categoria" style="background-image: url('images/1651144392.jpg');"></div>
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/banda.jpg" alt="Paso 12,7 mm">
+                    </div>
+                    <h3>Paso 12,7 mm (BT12,7)</h3>
+                    <p>Diseñadas para transferencias reducidas de producto delicado, optimizando el paso de cuchilla.</p>
+                    <a href="contacto.html" class="btn-pdf">Solicitar Info &rarr;</a>
+                </div>
+
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/nastri-curvilinei.jpg" alt="Micro Paso">
+                    </div>
+                    <h3>Micro Paso (0,8 mm)</h3>
+                    <p>Mapeo de mínimo diámetro para pequeñas piezas y productos altamente delicados.</p>
+                    <a href="contacto.html" class="btn-pdf">Solicitar Info &rarr;</a>
+                </div>
+
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/1651144392.jpg" alt="Piñones, Tacos y Aletas">
+                    </div>
                     <h3>Piñones, Tacos y Aletas</h3>
-                    <p>Disponemos de piñones partidos, inyectados y mecanizados para todos los tamaños y pasos.</p>
-                    <a href="contacto.html" class="btn-pdf">Consultar disponibilidad &rarr;</a>
+                    <p>Componentes modulares: piñones partidos e inyectados, perfiles de arrastre y empujadores laterales.</p>
+                    <a href="contacto.html" class="btn-pdf">Consultar Medidas &rarr;</a>
                 </div>
             </div>
-        </div>
-        <hr class="separador-catalogo">
+            <hr class="separador-catalogo">
+        </section>
 
-        <div class="seccion-categoria">
+        <section id="pvc-pu" class="bloque-catalogo todas pvc-pu activo">
             <div class="cabecera-categoria">
-                <h2>Otras <span>Soluciones</span></h2>
-                <p>Bandas sintéticas y de goma para transporte ligero, pesado y aplicaciones especiales.</p>
+                <h2>2. Bandas de <span>PVC y Poliuretano (PU)</span></h2>
+                <p>Cintas alimentarias, industriales y de logística con recubrimientos de alta calidad.</p>
             </div>
-            
-            <div class="carrusel">
+
+            <div class="grid-pasos">
                 <div class="tarjeta-categoria">
                     <div class="contenedor-img-tarjeta">
-                        <img src="images/image (6).jpeg" alt="Bandas Especiales 1">
-
+                        <img src="images/image_5d85f9.jpg" alt="Bandas de PVC">
                     </div>
-                    <h3>Bandas de Goma</h3>
-                    <p>Máxima resistencia a la abrasión, ideales para el sector minero, áridos y reciclaje.</p>
-                    <a href="contacto.html" class="btn-pdf">Solicitar Info &rarr;</a>
+                    <h3>Bandas de PVC Industrial</h3>
+                    <p>Excelente flexibilidad y ligereza. Resistentes a aceites, grasas de corte y productos químicos suaves.</p>
+                    <a href="contacto.html" class="btn-pdf">Consultar Opciones &rarr;</a>
                 </div>
 
                 <div class="tarjeta-categoria">
                     <div class="contenedor-img-tarjeta">
-                        <img src="images/image (7).png" alt="Bandas Especiales 2">
+                        <img src="images/image (7).png" alt="Bandas de Poliuretano">
                     </div>
-                    <h3>Cintas de PVC / PU</h3>
-                    <p>Superficies lisas y antiadherentes con certificación alimentaria para líneas de empaque.</p>
+                    <h3>Bandas de Poliuretano (PU)</h3>
+                    <p>Atóxicas (FDA/EU), con alta resistencia microbiológica, de fácil limpieza para contacto directo alimentario.</p>
+                    <a href="contacto.html" class="btn-pdf">Consultar Opciones &rarr;</a>
+                </div>
+            </div>
+            <hr class="separador-catalogo">
+        </section>
+
+        <section id="goma" class="bloque-catalogo todas goma activo">
+            <div class="cabecera-categoria">
+                <h2>3. Bandas Transportadoras de <span>Goma</span></h2>
+                <p>Diseñadas para sectores exigentes: minería, canteras, agricultura, áridos y reciclaje.</p>
+            </div>
+
+            <div class="grid-pasos">
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/image (6).png" alt="Bandas de Goma Anti-Abrasiva">
+                    </div>
+                    <h3>Goma Anti-Abrasiva e Impacto</h3>
+                    <p>Alta resistencia a la rotura, cortes e impactos pesados. Excelente durabilidad a la intemperie.</p>
+                    <a href="contacto.html" class="btn-pdf">Solicitar Cotización &rarr;</a>
+                </div>
+
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/image (6).jpeg" alt="Goma Especial / Elevación">
+                    </div>
+                    <h3>Goma Especial y Nervada</h3>
+                    <p>Variantes perfiladas y de alta inclinación para el transporte de graneles y materiales sueltos.</p>
                     <a href="contacto.html" class="btn-pdf">Solicitar Info &rarr;</a>
                 </div>
             </div>
-        </div>
+            <hr class="separador-catalogo">
+        </section>
+
+        <section id="metalicas" class="bloque-catalogo todas metalicas activo">
+            <div class="cabecera-categoria">
+                <h2>4. Bandas Transportadoras <span>Metálicas</span></h2>
+                <p>Soporte para temperaturas extremas, congelado, horneado, secado y lavado continuo.</p>
+            </div>
+
+            <div class="grid-pasos">
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/image (1).jpeg" alt="Bandas de Malla Metálica">
+                    </div>
+                    <h3>Bandas de Malla Metálica</h3>
+                    <p>Excelente ventilación, alta resistencia mecánica y térmica en procesos de cocción o congelación.</p>
+                    <a href="contacto.html" class="btn-pdf">Consultar Modelos &rarr;</a>
+                </div>
+
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/image (1).png" alt="Bandas Metálicas de Varillas">
+                    </div>
+                    <h3>Mallas de Varillas y Placas</h3>
+                    <p>Estructuras reforzadas para transporte pesado y líneas con drenaje continuo de líquidos.</p>
+                    <a href="contacto.html" class="btn-pdf">Consultar Modelos &rarr;</a>
+                </div>
+            </div>
+            <hr class="separador-catalogo">
+        </section>
+
+        <section id="colas" class="bloque-catalogo todas colas activo">
+            <div class="cabecera-categoria">
+                <h2>5. Colas para <span>Empalmes en Frío</span></h2>
+                <p>Adhesivos de alta resistencia para uniones duraderas en cintas de goma y PVC.</p>
+            </div>
+
+            <div class="grid-pasos">
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/image (2).jpeg" alt="Adhesivo de Contacto">
+                    </div>
+                    <h3>Adhesivo de Contacto en Frío</h3>
+                    <p>Elasticidad permanente para revestimiento de tambores, recubrimiento anti-desgaste y uniones rápidas en planta.</p>
+                    <a href="contacto.html" class="btn-pdf">Ficha de Seguridad &rarr;</a>
+                </div>
+
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/image (2).png" alt="Primers y Soluciones de Reparación">
+                    </div>
+                    <h3>Primers y Limpiadores</h3>
+                    <p>Soluciones químicas complementarias para la preparación de superficies antes del vulcanizado o pegado.</p>
+                    <a href="contacto.html" class="btn-pdf">Solicitar Info &rarr;</a>
+                </div>
+            </div>
+            <hr class="separador-catalogo">
+        </section>
+
+        <section id="accesorios" class="bloque-catalogo todas accesorios activo">
+            <div class="cabecera-categoria">
+                <h2>6. <span>Accesorios</span> y Protección de Línea</h2>
+                <p>Componentes complementarios para mejorar el rendimiento y vida útil de tus transportadores.</p>
+            </div>
+
+            <div class="grid-pasos">
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/1651144392.jpg" alt="Rascadores y Cunas">
+                    </div>
+                    <h3>Rascadores, Cunas y Limpiadores</h3>
+                    <p>Rascadores primarios/secundarios, cepillos rotativos, cunas de impacto y protectores de rodillo.</p>
+                    <a href="contacto.html" class="btn-pdf">Consultar Disponibilidad &rarr;</a>
+                </div>
+
+                <div class="tarjeta-categoria">
+                    <div class="contenedor-img-tarjeta">
+                        <img src="images/image (3).jpeg" alt="Guiado y Protecciones">
+                    </div>
+                    <h3>Sistemas de Faldillas y Guiado</h3>
+                    <p>Perfiles de estanqueidad, sistemas de faldillas y elementos de protección para evitar fugas de producto.</p>
+                    <a href="contacto.html" class="btn-pdf">Consultar Disponibilidad &rarr;</a>
+                </div>
+            </div>
+        </section>
 
     </main>
+
+    <script>
+        function filtrarCategoria(categoria) {
+            const botones = document.querySelectorAll('.btn-categoria');
+            botones.forEach(btn => btn.classList.remove('activo'));
+            event.target.classList.add('activo');
+
+            const bloques = document.querySelectorAll('.bloque-catalogo');
+            bloques.forEach(bloque => {
+                if (categoria === 'todas') {
+                    bloque.classList.add('activo');
+                } else {
+                    if (bloque.classList.contains(categoria)) {
+                        bloque.classList.add('activo');
+                    } else {
+                        bloque.classList.remove('activo');
+                    }
+                }
+            });
+        }
+    </script>
 
     <script src="main.js"></script>
 
     <footer>
         <div class="footer-contenido">
             <div class="footer-logo">
-                <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
+                <a href="index.html">
+                    <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
+                </a>
             </div>
             <p>Especialistas en bandas transportadoras y componentes industriales.</p>
             <div class="footer-garco">
