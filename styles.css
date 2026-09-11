@@ -1026,3 +1026,127 @@ footer {
     nav.activo { display: block; }
     nav ul { flex-direction: column; gap: 15px; }
 }
+/* ==============================================
+   AVISO DE COOKIES Y BANNER FLOTANTE
+   ============================================== */
+
+/* Barra de Cookies */
+.aviso-cookies {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.aviso-cookies.mostrar {
+    transform: translateY(0);
+}
+
+.aviso-cookies p {
+    margin: 0;
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+.aviso-cookies a {
+    color: var(--naranja);
+    text-decoration: underline;
+}
+
+.btn-cookies {
+    background-color: var(--naranja);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cookies:hover {
+    background-color: var(--naranja-hover);
+}
+
+/* Banner Flotante Informativo */
+.banner-flotante {
+    position: fixed;
+    top: 90px; /* Debajo de la cabecera */
+    right: 20px;
+    background-color: #ffffff;
+    border-left: 4px solid var(--naranja);
+    padding: 15px 40px 15px 15px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-tarjeta);
+    z-index: 9000;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+}
+
+.banner-flotante.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.banner-flotante a {
+    color: var(--azul-primario);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.banner-flotante a:hover {
+    color: var(--naranja);
+    text-decoration: underline;
+}
+
+.cerrar-banner {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--texto-mutado);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.cerrar-banner:hover {
+    color: var(--azul-primario);
+}
+
+@media (max-width: 768px) {
+    .aviso-cookies {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .aviso-cookies p { padding-right: 0; }
+    
+    .banner-flotante {
+        top: auto;
+        bottom: 80px; /* Encima del botón de volver arriba si lo hay */
+        right: 10px;
+        left: 10px;
+    }
+}

@@ -185,3 +185,50 @@ function filtrarCategoria(categoria) {
     // Feedback en consola o banner si se desea
     console.log(`Categorías activas visibles: ${totalVisibles}`);
 }
+// ----------------------------------------------
+    // 6. AVISO DE COOKIES
+    // ----------------------------------------------
+    if (!localStorage.getItem('cookiesAceptadas')) {
+        const cookiesHTML = `
+            <div id="avisoCookies" class="aviso-cookies">
+                <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación. <a href="#">Más información</a>.</p>
+                <button id="btnAceptarCookies" class="btn-cookies">Aceptar</button>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', cookiesHTML);
+        
+        // Pequeño retraso para que se vea la animación de subida
+        setTimeout(() => {
+            document.getElementById('avisoCookies').classList.add('mostrar');
+        }, 500);
+
+        document.getElementById('btnAceptarCookies').addEventListener('click', () => {
+            document.getElementById('avisoCookies').classList.remove('mostrar');
+            localStorage.setItem('cookiesAceptadas', 'true'); // Lo guarda para que no vuelva a salir
+        });
+    }
+
+    // ----------------------------------------------
+    // 7. BANNER FLOTANTE (MÁS INFO)
+    // ----------------------------------------------
+    // Se muestra solo si no ha sido cerrado previamente en la sesión
+    if (!sessionStorage.getItem('bannerInfoCerrado')) {
+        const bannerHTML = `
+            <div id="bannerInfo" class="banner-flotante">
+                <span>📣 ¿Buscas soluciones a medida?</span>
+                <a href="contacto.html">Más info aquí</a>
+                <button id="btnCerrarBanner" class="cerrar-banner" aria-label="Cerrar">&times;</button>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', bannerHTML);
+
+        // Aparece después de 2 segundos de cargar la página
+        setTimeout(() => {
+            document.getElementById('bannerInfo').classList.add('mostrar');
+        }, 2000);
+
+        document.getElementById('btnCerrarBanner').addEventListener('click', () => {
+            document.getElementById('bannerInfo').classList.remove('mostrar');
+            sessionStorage.setItem('bannerInfoCerrado', 'true'); // No vuelve a salir en esta pestaña
+        });
+    }
