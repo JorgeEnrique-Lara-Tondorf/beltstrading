@@ -5,12 +5,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Quiénes Somos? | Belts Trading</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajustes específicos para potenciar la vista de Nosotros */
+        .seccion-nosotros-hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .texto-nosotros h2 {
+            font-size: 32px;
+            color: var(--azul-primario);
+            font-weight: 800;
+            line-height: 1.3;
+            margin-top: 0;
+        }
+
+        .texto-nosotros h2 span {
+            color: var(--naranja);
+        }
+
+        .caja-destacada {
+            background-color: #ffffff;
+            border-left: 5px solid var(--naranja);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: var(--sombra-suave);
+            margin: 25px 0;
+            font-size: 15px;
+        }
+
+        .imagen-destacada-nosotros {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra-tarjeta);
+            border: 1px solid var(--gris-borde);
+            height: 380px;
+            cursor: pointer;
+        }
+
+        .imagen-destacada-nosotros img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .imagen-destacada-nosotros:hover img {
+            transform: scale(1.04);
+        }
+
+        .seccion-valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .card-valor {
+            background: #ffffff;
+            padding: 30px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--gris-borde);
+            box-shadow: var(--sombra-suave);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card-valor:hover {
+            transform: translateY(-6px);
+            border-color: var(--naranja);
+        }
+
+        .icono-valor {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card-valor h3 {
+            color: var(--azul-primario);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-valor p {
+            color: var(--texto-mutado);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .cta-nosotros {
+            background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+            color: #ffffff;
+            padding: 45px 25px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 60px;
+            box-shadow: var(--sombra-tarjeta);
+        }
+
+        .cta-nosotros h3 {
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .cta-nosotros p {
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+    </style>
 </head>
 <body>
 
     <header id="cabecera">
         <a href="index.html" class="logo" title="Ir a Inicio">
-            <img src="images/logo belts.jpeg" alt="Belts Trading - Ir a Inicio">
+            <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
         </a>
         
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
@@ -18,7 +131,7 @@
         <nav id="navMenu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">¿Quiénes somos?</a></li>
+                <li><a href="nosotros.html" class="activo">¿Quiénes somos?</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="contacto.html" class="btn-header">📄 Solicitar Cotización</a></li>
@@ -28,68 +141,88 @@
 
     <div class="banner-interno">
         <h1>¿Quiénes <span>Somos?</span></h1>
-        <p>Experiencia, innovación y compromiso con tu producción.</p>
+        <p>Especialistas en la fabricación y comercialización de sistemas de transporte industrial.</p>
     </div>
 
     <main class="contenedor-nosotros">
-        <div class="texto-nosotros">
-            <h2>Especialistas en soluciones para el <span>transporte industrial</span></h2>
-            
-            <p>En <strong>Belts Trading</strong>, somos especialistas y referentes en soluciones integrales para el transporte industrial. Nos dedicamos apasionadamente a la comercialización y fabricación de <strong>bandas transportadoras de PVC/PU y modulares</strong>, así como a la <strong>producción de rodillos y componentes</strong> de alta precisión para líneas de transporte y maquinaria.</p>
-
-            <p>Entendemos que cada industria tiene sus propias exigencias. Por ello, proveemos soluciones adaptadas a una amplia gama de sectores, abarcando desde la industria ligera y pesada, hasta áreas críticas como la alimentación, logística, reciclaje, minería, agricultura y manufactura.</p>
-
-            <div class="caja-destacada">
-                <strong>Nuestro Compromiso:</strong> Garantizar calidad, fiabilidad y un servicio técnico especializado. En Belts Trading, fusionamos años de experiencia, innovación continua y una atención profundamente personalizada con un único objetivo: <em>mantener en constante movimiento la productividad de tu empresa.</em>
-            </div>
-        </div>
-
-        <div class="imagen-nosotros">
-            <img src="images/image (2).jpeg" alt="Instalaciones y equipo de Belts Trading">
-        </div>
-    </main>
-<section class="galeria-empresa" style="max-width: 1150px; margin: 0 auto 60px auto; padding: 0 20px;">
-        <h2 style="color: var(--azul-primario); font-size: 28px; font-weight: 800; margin-bottom: 20px; text-align: center;">Nuestras <span>Instalaciones</span></h2>
-        <p style="text-align: center; color: var(--texto-mutado); margin-bottom: 30px;">Infraestructura y equipo preparados para dar la mejor respuesta a la industria.</p>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--sombra-suave);">
-                <img src="images/image (3).png" alt="Instalaciones 1" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <section class="seccion-nosotros-hero">
+            <div class="texto-nosotros">
+                <h2>Líderes en soluciones para el <span>transporte industrial</span></h2>
+                
+                <p>En <strong>Belts Trading</strong>, somos especialistas y referentes en soluciones integrales para el transporte de cargas y componentes industriales. Nos dedicamos apasionadamente a la comercialización y fabricación de <strong>bandas transportadoras de PVC/PU y modulares</strong>, así como a la producción de rodillos y componentes de alta precisión para líneas de transporte y maquinaria.</p>
+
+                <p>Entendemos las exigencias de cada proceso productivo. Por ello, proveemos soluciones adaptadas a sectores clave como alimentación, logística, reciclaje, minería, agricultura y manufactura pesada.</p>
+
+                <div class="caja-destacada">
+                    <strong>Nuestro Compromiso:</strong> Garantizar calidad, fiabilidad y un servicio técnico especializado. En Belts Trading fusionamos innovación continua con una atención técnica a medida para mantener en constante movimiento la productividad de tu empresa.
+                </div>
             </div>
-            <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--sombra-suave);">
-                <img src="images/image (4).png" alt="Instalaciones 2" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+
+            <div class="imagen-destacada-nosotros">
+                <img src="images/image (2).jpeg" alt="Instalaciones y equipo Belts Trading">
             </div>
-            <div style="border-radius: 10px; overflow: hidden; box-shadow: var(--sombra-suave);">
-                <img src="images/image (5).png" alt="Instalaciones 3" style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </section>
+
+        <section style="margin-top: 60px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="color: var(--azul-primario); font-size: 30px; font-weight: 800; margin-bottom: 8px;">Nuestras <span>Instalaciones</span></h2>
+                <p style="color: var(--texto-mutado); font-size: 15px;">Infraestructura técnica y equipamiento preparados para dar respuesta inmediata al sector.</p>
             </div>
-        </div>
-    </section>
-    <section class="seccion-valores">
-        <div class="valores-grid">
-            <div class="valor-item">
+
+            <div class="grid-instalaciones">
+                <div class="card-instalacion">
+                    <div class="contenedor-img-tarjeta" style="height: 100%; border: none; padding: 0;">
+                        <img src="images/image (3).jpeg" alt="Almacén e Instalaciones Belts Trading">
+                    </div>
+                </div>
+                <div class="card-instalacion">
+                    <div class="contenedor-img-tarjeta" style="height: 100%; border: none; padding: 0;">
+                        <img src="images/image (4).jpeg" alt="Maquinaria y Procesamiento">
+                    </div>
+                </div>
+                <div class="card-instalacion">
+                    <div class="contenedor-img-tarjeta" style="height: 100%; border: none; padding: 0;">
+                        <img src="images/image (5).jpeg" alt="Zona de Producción y Ensamblaje">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-valores-grid">
+            <div class="card-valor">
                 <div class="icono-valor">🏆</div>
-                <h3>Experiencia</h3>
-                <p>Años liderando el sector nos permiten entender y anticiparnos a tus necesidades.</p>
+                <h3>Experiencia B2B</h3>
+                <p>Años ofreciendo respuesta a la industria garantizan diagnósticos precisos e instalaciones eficaces.</p>
             </div>
-            <div class="valor-item">
-                <div class="icono-valor">⚙️</div>
-                <h3>Innovación</h3>
-                <p>Utilizamos materiales de vanguardia para garantizar la máxima durabilidad.</p>
+            <div class="card-valor">
+                <div class="icono-valor">⚡</div>
+                <h3>Rapidez de Respuesta</h3>
+                <p>Stock continuo de componentes y capacidad de suministro rápido para minimizar tiempos de parada.</p>
             </div>
-            <div class="valor-item">
-                <div class="icono-valor">🤝</div>
-                <h3>Atención Personalizada</h3>
-                <p>Asesoramiento técnico a medida para cada proyecto y cada cliente.</p>
+            <div class="card-valor">
+                <div class="icono-valor">🛠️</div>
+                <h3>Soporte Técnico</h3>
+                <p>Asesoramiento personalizado en la elección de materiales, pasos de banda y componentes a medida.</p>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="cta-nosotros">
+            <h3>¿Perteneces a <span>GARCO TRADING GROUP</span>?</h3>
+            <p>Aprovecha el respaldo técnico e industrial de un grupo especializado en suministros internacionales.</p>
+            <a href="contacto.html" class="btn-principal" style="background-color: var(--naranja); display: inline-block; padding: 14px 32px; font-size: 16px;">Contactar con un Especialista &rarr;</a>
+        </section>
+
+    </main>
 
     <script src="main.js"></script>
 
     <footer>
         <div class="footer-contenido">
             <div class="footer-logo">
-                <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
+                <a href="index.html">
+                    <img src="images/logo belts.jpeg" alt="Belts Trading Logo">
+                </a>
             </div>
             <p>Especialistas en bandas transportadoras y componentes industriales.</p>
             <div class="footer-garco">

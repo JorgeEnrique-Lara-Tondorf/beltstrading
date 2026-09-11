@@ -524,3 +524,505 @@ footer {
 
 /* Tip: Si prefieres que las fichas/dibujos técnicos no se recorten NADA, 
    cambia 'object-fit: cover;' por 'object-fit: contain;' y pon fondo blanco. */
+   /* ==============================================
+   BELTS TRADING - ESTILOS CORPORATIVOS B2B
+   ============================================== */
+
+:root {
+    --azul-primario: #0a192f;
+    --azul-secundario: #1e293b;
+    --naranja: #ff6600;
+    --naranja-hover: #e65c00;
+    --verde-wa: #25D366;
+    --gris-fondo: #f8fafc;
+    --gris-borde: #e2e8f0;
+    --texto-oscuro: #0f172a;
+    --texto-mutado: #64748b;
+    --sombra-suave: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    --sombra-tarjeta: 0 15px 30px -10px rgba(10, 25, 47, 0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* CABECERA DINÁMICA */
+header, #cabecera {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 5%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--gris-borde);
+    transition: all 0.3s ease;
+}
+
+header.header-scrolled {
+    padding: 8px 5%;
+    box-shadow: 0 6px 20px rgba(10, 25, 47, 0.12);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover img { transform: scale(1.03); }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--azul-primario);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 6;
+}
+/* ==============================================
+   BELTS TRADING - ESTILOS B2B & COMPONENTES JS
+   ============================================== */
+
+:root {
+    --azul-primario: #0a192f;
+    --azul-secundario: #1e293b;
+    --naranja: #ff6600;
+    --naranja-hover: #e65c00;
+    --verde-wa: #25D366;
+    --verde-wa-hover: #128C7E;
+    --gris-fondo: #f8fafc;
+    --gris-borde: #e2e8f0;
+    --texto-oscuro: #0f172a;
+    --texto-mutado: #64748b;
+    --sombra-suave: 0 8px 20px rgba(10, 25, 47, 0.06);
+    --sombra-tarjeta: 0 12px 28px rgba(10, 25, 47, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--gris-fondo);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* CABECERA CON TRANSICIÓN DE SCROLL */
+header, #cabecera {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    border-bottom: 1px solid var(--gris-borde);
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 4px 20px rgba(10, 25, 47, 0.12);
+    padding: 8px 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.03);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--azul-primario);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+nav a:hover, nav a.activo {
+    color: var(--naranja);
+    background-color: rgba(255, 102, 0, 0.08);
+}
+
+.btn-header {
+    background-color: var(--azul-primario) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 10px 20px !important;
+    border-radius: 6px;
+}
+
+.btn-header:hover {
+    background-color: var(--azul-secundario) !important;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: var(--azul-primario);
+    cursor: pointer;
+}
+
+/* BANNER INTERNO */
+.banner-interno {
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 20px;
+    border-bottom: 4px solid var(--naranja);
+}
+
+.banner-interno h1 {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.banner-interno h1 span {
+    color: var(--naranja);
+}
+
+.banner-interno p {
+    font-size: 16px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* CONTENEDOR PRINCIPAL Y REJILLA CENTRADA */
+.contenedor-catalogo, .contenedor-nosotros, .contenedor-contacto {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.grid-pasos, .grid-instalaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+    gap: 30px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* TARJETAS CON BORDE NARANJA CORPORATIVO */
+.tarjeta-categoria, .card-instalacion {
+    background: #ffffff;
+    border: 1px solid var(--gris-borde);
+    border-top: 5px solid var(--naranja);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-categoria:hover, .card-instalacion:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+/* CONTENEDOR DE IMAGEN CON ENCUADRE AUTOMÁTICO */
+.contenedor-img-tarjeta {
+    width: 100%;
+    height: 210px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f1f5f9;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.contenedor-img-tarjeta img, .card-instalacion img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.card-instalacion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenedor-img-tarjeta:hover img, .card-instalacion:hover img {
+    transform: scale(1.05);
+}
+
+.tarjeta-categoria h3 {
+    color: var(--azul-primario);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.tarjeta-categoria p {
+    color: var(--texto-mutado);
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-pdf, .btn-principal {
+    display: block;
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.25s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-pdf:hover, .btn-principal:hover {
+    background-color: var(--naranja);
+}
+
+/* ==============================================
+   ESTILOS COMPONENTES JS (MODAL & BOTÓN ARRIBA)
+   ============================================== */
+
+/* Modal Lightbox */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.activo {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    color: var(--azul-primario);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-cerrar:hover {
+    color: var(--naranja);
+}
+
+#imgModal {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#tituloModal {
+    color: var(--azul-primario);
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* Botón Flotante Volver Arriba */
+#btnVolverArriba {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--naranja);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#btnVolverArriba.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#btnVolverArriba:hover {
+    background-color: var(--naranja-hover);
+    transform: translateY(-4px);
+}
+
+/* Toast Notificación JS */
+.notificacion-toast {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: bottom 0.4s ease;
+    z-index: 3000;
+}
+
+.notificacion-toast.mostrar {
+    bottom: 30px;
+}
+
+.notificacion-toast.error {
+    background-color: #e11d48;
+}
+
+.notificacion-toast.exito {
+    background-color: #10b981;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--azul-primario);
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px 25px 20px;
+    margin-top: 60px;
+}
+
+.footer-contenido {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.footer-garco {
+    display: inline-block;
+    border: 1px solid var(--naranja);
+    padding: 8px 18px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.footer-legal {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    nav.activo { display: block; }
+    nav ul { flex-direction: column; gap: 15px; }
+}
