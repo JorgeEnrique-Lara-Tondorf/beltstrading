@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belts Trading | Bandas Transportadoras y Componentes</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para el visor del PDF */
+        .visor-catalogo {
+            max-width: 1150px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .visor-cabecera {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .visor-cabecera h2 {
+            color: var(--azul-primario);
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .visor-cabecera h2 span {
+            color: var(--naranja);
+        }
+
+        .visor-cabecera p {
+            color: var(--texto-mutado);
+            font-size: 16px;
+        }
+
+        .visor-contenedor {
+            width: 100%;
+            height: 75vh; /* Ocupa el 75% del alto de la pantalla */
+            min-height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(10, 25, 47, 0.15);
+            border: 2px solid var(--gris-borde);
+            background-color: #f1f5f9;
+        }
+
+        .visor-contenedor iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .botones-visor {
+            text-align: center;
+            margin-top: 25px;
+        }
+    </style>
 </head>
 <body>
 
@@ -38,64 +89,73 @@
         </div>
     </section>
 
-    <section class="caracteristicas">
-        <div class="feature-box">
-            <h3>🛠️ Bandas PVC/PU</h3>
-            <p>Cintas de alta resistencia ideales para la industria alimentaria y logística.</p>
+    <section class="caracteristicas" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; padding: 60px 5%; max-width: 1200px; margin: 0 auto;">
+        <div class="feature-box" style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: var(--sombra-suave); border-top: 4px solid var(--naranja); text-align: center;">
+            <h3 style="color: var(--azul-primario); margin-top: 0;">🛠️ Bandas PVC/PU</h3>
+            <p style="color: var(--texto-mutado); margin: 0;">Cintas de alta resistencia ideales para la industria alimentaria y logística.</p>
         </div>
-        <div class="feature-box">
-            <h3>📦 Bandas Modulares</h3>
-            <p>Fácil limpieza, mantenimiento rápido y adaptabilidad para optimizar tus procesos.</p>
+        <div class="feature-box" style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: var(--sombra-suave); border-top: 4px solid var(--naranja); text-align: center;">
+            <h3 style="color: var(--azul-primario); margin-top: 0;">📦 Bandas Modulares</h3>
+            <p style="color: var(--texto-mutado); margin: 0;">Fácil limpieza, mantenimiento rápido y adaptabilidad para optimizar tus procesos.</p>
         </div>
-        <div class="feature-box">
-            <h3>🛡️ Bandas de Goma</h3>
-            <p>Máxima durabilidad para trabajos pesados, minería y transporte de áridos.</p>
+        <div class="feature-box" style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: var(--sombra-suave); border-top: 4px solid var(--naranja); text-align: center;">
+            <h3 style="color: var(--azul-primario); margin-top: 0;">🛡️ Bandas de Goma</h3>
+            <p style="color: var(--texto-mutado); margin: 0;">Máxima durabilidad para trabajos pesados, minería y transporte de áridos.</p>
         </div>
-        <div class="feature-box">
-            <h3>⚙️ Componentes</h3>
-            <p>Piñones, engranajes y accesorios de repuesto fabricados a medida.</p>
+        <div class="feature-box" style="background: #fff; padding: 30px; border-radius: 10px; box-shadow: var(--sombra-suave); border-top: 4px solid var(--naranja); text-align: center;">
+            <h3 style="color: var(--azul-primario); margin-top: 0;">⚙️ Componentes</h3>
+            <p style="color: var(--texto-mutado); margin: 0;">Piñones, engranajes y accesorios de repuesto fabricados a medida.</p>
         </div>
     </section>
 
-    <section class="catalogo-destacado">
-        <h2>Catálogo Destacado</h2>
+    <section class="catalogo-destacado" style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+        <h2 style="color: var(--azul-primario); font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px;">Catálogo Destacado</h2>
         
-        <div class="carrusel">
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/image.png" alt="Bandas PVC/PU">
+        <div class="carrusel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px;">
+            <div class="tarjeta-categoria" style="background: #fff; border: 1px solid var(--gris-borde); border-top: 5px solid var(--naranja); border-radius: 12px; padding: 22px; box-shadow: var(--sombra-suave); display: flex; flex-direction: column; text-align: center;">
+                <div class="contenedor-img-tarjeta" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;">
+                    <img src="images/image_5d85f9.jpg" alt="Bandas PVC/PU" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
-                <h3>Bandas PVC/PU</h3>
-                <p>Superficie lisa y resistente, perfecta para líneas de empaque y transporte ligero.</p>
-                <a href="catalogo.html" class="btn-pdf">Ver Detalles &rarr;</a>
+                <h3 style="color: var(--azul-primario); font-size: 20px;">Bandas PVC/PU</h3>
+                <p style="color: var(--texto-mutado); flex-grow: 1;">Superficie lisa y resistente, perfecta para líneas de empaque y transporte ligero.</p>
             </div>
 
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/banda.jpg" alt="Bandas Modulares Rectas">
+            <div class="tarjeta-categoria" style="background: #fff; border: 1px solid var(--gris-borde); border-top: 5px solid var(--naranja); border-radius: 12px; padding: 22px; box-shadow: var(--sombra-suave); display: flex; flex-direction: column; text-align: center;">
+                <div class="contenedor-img-tarjeta" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;">
+                    <img src="images/banda.jpg" alt="Bandas Modulares" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
-                <h3>Modulares Rectas</h3>
-                <p>Series de paso 50,8 mm diseñadas para alta carga y reducción de paradas técnicas.</p>
-                <a href="pdf/BANDAS MODULARES RECTAS.pdf" target="_blank" class="btn-pdf">Ver Ficha Técnica</a>
+                <h3 style="color: var(--azul-primario); font-size: 20px;">Modulares Rectas</h3>
+                <p style="color: var(--texto-mutado); flex-grow: 1;">Series de paso 50,8 mm diseñadas para alta carga y reducción de paradas técnicas.</p>
             </div>
 
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/nastri-curvilinei.jpg" alt="Bandas Modulares Curvas">
+            <div class="tarjeta-categoria" style="background: #fff; border: 1px solid var(--gris-borde); border-top: 5px solid var(--naranja); border-radius: 12px; padding: 22px; box-shadow: var(--sombra-suave); display: flex; flex-direction: column; text-align: center;">
+                <div class="contenedor-img-tarjeta" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; margin-bottom: 15px;">
+                    <img src="images/nastri-curvilinei.jpg" alt="Bandas Modulares Curvas" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
-                <h3>Modulares Curvas</h3>
-                <p>Flexibilidad total en circuitos complejos con excelente capacidad de tracción.</p>
-                <a href="pdf/CATALOGO BANDAS MODULARES CURVAS.pdf" target="_blank" class="btn-pdf">Ver Ficha Técnica</a>
+                <h3 style="color: var(--azul-primario); font-size: 20px;">Modulares Curvas</h3>
+                <p style="color: var(--texto-mutado); flex-grow: 1;">Flexibilidad total en circuitos complejos con excelente capacidad de tracción.</p>
             </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="catalogo.html" class="btn-principal">Ver todas las familias de productos &rarr;</a>
+        </div>
+    </section>
 
-            <div class="tarjeta-categoria">
-                <div class="contenedor-img-tarjeta">
-                    <img src="images/1651144392.jpg" alt="Componentes y Accesorios">
-                </div>
-                <h3>Componentes</h3>
-                <p>Todo tipo de accesorios: piñones mecanizados, perfiles y aletas laterales.</p>
-                <a href="contacto.html" class="btn-pdf">Consultar Stock &rarr;</a>
-            </div>
+    <section class="visor-catalogo">
+        <div class="visor-cabecera">
+            <h2>Catálogo <span>Interactivo</span></h2>
+            <p>Hojea nuestro catálogo completo directamente desde aquí. Desliza para pasar las páginas.</p>
+        </div>
+
+        <div class="visor-contenedor">
+            <iframe src="pdf/Binder1.pdf" title="Catálogo Belts Trading"></iframe>
+        </div>
+
+        <div class="botones-visor">
+            <a href="pdf/Binder1.pdf" download="Catalogo_Belts_Trading.pdf" class="btn-principal" style="background-color: var(--azul-primario);">
+                ⬇️ Descargar Catálogo en PDF
+            </a>
         </div>
     </section>
 
