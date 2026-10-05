@@ -1188,3 +1188,20 @@ footer {
     color: #ff6600;
     font-size: 12px;
 }
+
+/* ==============================================
+   LEGAL: enlaces de footer, casilla de privacidad, páginas legales
+   ============================================== */
+.footer-legal a { color: inherit; text-decoration: underline; }
+.footer-legal a:hover { opacity: 0.8; }
+.grupo-check { display: flex; align-items: flex-start; gap: 10px; margin: 15px 0 10px; }
+.grupo-check input { margin-top: 4px; width: auto; }
+.grupo-check label { font-size: 14px; line-height: 1.4; }
+.info-basica { font-size: 12px; line-height: 1.5; color: #555; margin: 0 0 18px; }
+.aviso-cookies .acciones-cookies { display: flex; gap: 10px; align-items: center; }
+.texto-legal { max-width: 900px; margin: 50px auto; padding: 0 20px; line-height: 1.7; }
+.texto-legal h2 { margin-top: 32px; color: var(--azul-primario); }
+.texto-legal table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; display: block; overflow-x: auto; }
+.texto-legal th, .texto-legal td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; vertical-align: top; }
+.texto-legal th { background: #f0f3f7; }
+.completar { background: #fff3a8; padding: 0 3px; }

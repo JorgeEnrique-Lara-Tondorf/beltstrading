@@ -186,29 +186,6 @@ function filtrarCategoria(categoria) {
     console.log(`Categorías activas visibles: ${totalVisibles}`);
 }
 // ----------------------------------------------
-    // 6. AVISO DE COOKIES
-    // ----------------------------------------------
-    if (!localStorage.getItem('cookiesAceptadas')) {
-        const cookiesHTML = `
-            <div id="avisoCookies" class="aviso-cookies">
-                <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación. <a href="#">Más información</a>.</p>
-                <button id="btnAceptarCookies" class="btn-cookies">Aceptar</button>
-            </div>
-        `;
-        document.body.insertAdjacentHTML('beforeend', cookiesHTML);
-        
-        // Pequeño retraso para que se vea la animación de subida
-        setTimeout(() => {
-            document.getElementById('avisoCookies').classList.add('mostrar');
-        }, 500);
-
-        document.getElementById('btnAceptarCookies').addEventListener('click', () => {
-            document.getElementById('avisoCookies').classList.remove('mostrar');
-            localStorage.setItem('cookiesAceptadas', 'true'); // Lo guarda para que no vuelva a salir
-        });
-    }
-
-    // ----------------------------------------------
     // 7. BANNER FLOTANTE (MÁS INFO)
     // ----------------------------------------------
     // Se muestra solo si no ha sido cerrado previamente en la sesión
